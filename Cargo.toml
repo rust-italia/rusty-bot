@@ -1,0 +1,19 @@
+[package]
+name = "rusty-bot"
+version = "0.1.0"
+edition = "2018"
+
+[features]
+default = []
+tls = ["teloxide/rustls", "axum-server/tls-rustls"]
+
+[dependencies]
+axum = "0.5.17"
+axum-server = "0.4.4"
+futures-util = "0.3.25"
+teloxide = { version = "0.11.1", default-features = false, features = ["cache-me", "rustls", "ctrlc_handler", "webhooks-axum"] }
+tokio = { version = "1.21.2", features = ["macros"] }
+tokio-stream = "0.1.11"
+tracing = "0.1.37"
+tracing-subscriber = "0.3.16"
+url = "2.3.1"
